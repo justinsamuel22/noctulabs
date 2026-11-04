@@ -1,0 +1,11 @@
+[
+  {"name": "noctunest-marketing-assets",            "region": "eu-west-2", "owner": "marketing",   "public": true,  "encrypted": true},
+  {"name": "brian-backups-dont-touch",              "region": "eu-west-2", "owner": "dave",        "public": false, "encrypted": true},
+  {"name": "noctunest-payroll-final-FINAL-v2-REAL", "region": "eu-west-2", "owner": "finance",     "public": true,  "encrypted": false},
+  {"name": "imogen-investor-deck-AI-driven",        "region": "eu-west-1", "owner": "imogen",      "public": false, "encrypted": true},
+  {"name": "noctunest-customer-kyc",                "region": "eu-west-2", "owner": "compliance",  "public": false, "encrypted": false},
+  {"name": "noctunest-fin-reports-q3",              "region": "eu-west-2", "owner": "intern-temp", "public": false},
+  {"name": "tomasz-test-bucket-delete-later",       "region": "us-east-1", "owner": "tomasz",      "public": true,  "encrypted": false},
+  {"name": "hoot-alert-logs",                       "region": "eu-west-2", "owner": "secops",      "public": true,  "encrypted": true},
+  {"name": "brian-mirror-old-DO-NOT-DELETE",        "region": "eu-west-2", "owner": "dave",        "public": false, "encrypted": false}
+]
