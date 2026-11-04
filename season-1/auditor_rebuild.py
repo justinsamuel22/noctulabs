@@ -1,7 +1,12 @@
+import sys
 import json
 
-with open("buckets.json") as file:
-    buckets = json.load(file)
+try:
+    with open("buckets.json") as file:
+        buckets = json.load(file)
+except FileNotFoundError:
+    print("ERROR: Bucket list data was not found. Please check if bucket list data is present and run this script from the season-1 folder instead.")
+    sys.exit(1)
 
 criticals = []
 warnings = []
