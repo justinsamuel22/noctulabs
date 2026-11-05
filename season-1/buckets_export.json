@@ -1,0 +1,73 @@
+{
+  "account": "noctunest-prod",
+  "exported_by": "dave",
+  "exported_at": "2026-11-05T09:14:00Z",
+  "buckets": [
+    {
+      "name": "noctunest-payroll-final-FINAL-v3-ACTUALLY-REAL",
+      "region": "eu-west-2",
+      "config": {
+        "public_access": { "enabled": true },
+        "encryption": { "enabled": false, "algorithm": null }
+      },
+      "tags": { "owner": "finance", "env": "prod" }
+    },
+    {
+      "name": "brian-backups-dont-touch",
+      "region": "eu-west-2",
+      "config": {
+        "public_access": { "enabled": false },
+        "encryption": { "enabled": true, "algorithm": "AES256" }
+      },
+      "tags": { "owner": "dave", "env": "prod" }
+    },
+    {
+      "name": "noctunest-marketing-assets",
+      "region": "eu-west-2",
+      "config": {
+        "public_access": { "enabled": true },
+        "encryption": { "enabled": true, "algorithm": "AES256" }
+      },
+      "tags": { "owner": "marketing" }
+    },
+    {
+      "name": "noctunest-customer-kyc",
+      "region": "eu-west-2",
+      "config": {
+        "public_access": { "enabled": false },
+        "encryption": { "enabled": false, "algorithm": null }
+      },
+      "tags": { "owner": "compliance", "env": "prod" }
+    },
+    {
+      "name": "tomasz-test-bucket-delete-later-2",
+      "region": "us-east-1",
+      "config": {
+        "public_access": { "enabled": true }
+      },
+      "tags": { "owner": "tomasz" }
+    },
+    {
+      "name": "imogen-ai-driven-pitch-deck",
+      "region": "eu-west-1",
+      "config": {
+        "public_access": { "enabled": false },
+        "encryption": { "enabled": true, "algorithm": "aws:kms" }
+      },
+      "tags": { "owner": "imogen", "env": "prod" }
+    },
+    {
+      "name": "noctunest-fin-reports-q4",
+      "region": "eu-west-2",
+      "tags": { "owner": "intern-temp" }
+    },
+    {
+      "name": "hoot-alert-archive",
+      "region": "eu-west-2",
+      "config": {
+        "public_access": { "enabled": false },
+        "encryption": { "enabled": true, "algorithm": "AES256" }
+      }
+    }
+  ]
+}
