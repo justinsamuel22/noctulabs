@@ -5,6 +5,7 @@ badges = [
     {"last_used_days": 5},
     {"owner": "Gary", "active": False},
     {"owner": "Tomasz", "last_used_days": 200},
+    {"owner": "Imogen"}
 ]
 
 findings = []
@@ -16,32 +17,21 @@ warnings = []
 def check_badge(badge):
     owner = badge.get('owner', "UNKNOWN")
     active = badge.get('active', True)
-    note = ", active status missing, so assumed active"
+    note = ""
 
-    if "active" not in badge and "owner" not in badge:
-        return {"owner": owner, "verdict": "CRITICAL", "reason": f"without owner{note}"}
-    elif not active:
+    if "active" not in badge:
+        note = ", active status missing, so assumed active"
+
+    if not active:
         return {"owner": owner, "verdict": "OK", "reason": "badge deactivated"}
     elif "owner" not in badge:
-        if "active" not in badge:
-            return {"owner": owner, "verdict": "CRITICAL", "reason": f"active badge without owner{note}"}
-        else:
-            return {"owner": owner, "verdict": "CRITICAL", "reason": "active badge without owner"}
+        return {"owner": owner, "verdict": "CRITICAL", "reason": f"active badge without owner{note}"}
     elif "last_used_days" not in badge:
-        if "active" not in badge:
-            return {"owner": owner, "verdict": "WARNING", "reason": f"no last-used date, assumed WARNING{note}"}
-        else:
-            return {"owner": owner, "verdict": "WARNING", "reason": "no last-used date, assumed WARNING"}
+        return {"owner": owner, "verdict": "WARNING", "reason": f"no last-used date, assumed WARNING{note}"}
     elif badge['last_used_days'] > 90:
-        if "active" not in badge:
-            return {"owner": owner, "verdict": "WARNING", "reason": f"unused for {badge['last_used_days']} days{note}"}        
-        else:
-            return {"owner": owner, "verdict": "WARNING", "reason": f"unused for {badge['last_used_days']} days"}        
+        return {"owner": owner, "verdict": "WARNING", "reason": f"unused for {badge['last_used_days']} days{note}"}        
     else:
-        if "active" not in badge:
-            return {"owner": owner, "verdict": "OK", "reason": f"last used {badge['last_used_days']} day(s) ago{note}"}
-        else:
-            return {"owner": owner, "verdict": "OK", "reason": f"last used {badge['last_used_days']} day(s) ago"}
+        return {"owner": owner, "verdict": "OK", "reason": f"last used {badge['last_used_days']} day(s) ago{note}"}
         
 for b in badges:
     finding = check_badge(b)
